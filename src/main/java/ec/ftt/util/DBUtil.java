@@ -33,8 +33,8 @@ public class DBUtil {
             	//jdbc:mysql://localhost:3306/?user=root"
                 String driver = "com.mysql.jdbc.Driver";
                 String url = "jdbc:mysql://127.0.0.1:3306";
-                String user = "ftt"; //"scott";
-                String password = "1234";//"@@T1ger!"; //"UFLg@9!wytje8NjR"; System.getenv("FTT_PWD");
+                String user = "ftt"; 
+                String password = "1234";
                 
                 Class.forName(driver);
                 
