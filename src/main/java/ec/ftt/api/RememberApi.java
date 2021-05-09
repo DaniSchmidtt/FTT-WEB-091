@@ -38,20 +38,16 @@ public class RememberApi extends HttpServlet {
 
 		String rememberId = request.getParameter("remember-id");
 		
-		
+		RememberDao rememberDao = new RememberDao();
 		
 	    if(rememberId != null) {
-	    	long id = Long.valueOf(rememberId);
-	    	
-	    	RememberDao rememberDao = new RememberDao();
+	    	long id = Long.valueOf(rememberId);	    	
 	    	
 	        Remember remember = rememberDao.getRememberById(id);
 	     	Gson gson = new Gson();
 	    	response.getWriter().append(gson.toJson(remember));
 	    	
-	    } else {	
-	    	
-	    	RememberDao rememberDao = new RememberDao();
+	    } else {		    	
 	    	
 	    	List<Remember> remembers = rememberDao.getAllRemembers();
 	        

@@ -38,19 +38,17 @@ public class PasswordApi extends HttpServlet {
 
 		String passwordId = request.getParameter("password-id");
 		
+		PasswordDao passwordDao = new PasswordDao();
+		
 	    if(passwordId != null) {
-	    	long id = Long.valueOf(passwordId);
-	    	
-	    	PasswordDao passwordDao = new PasswordDao();
+	    	long id = Long.valueOf(passwordId);    	
 	    	
 	        Password password = passwordDao.getPasswordById(id);
 	     	Gson gson = new Gson();
 	    	response.getWriter().append(gson.toJson(password));
 	    	
 	    } else {
-	    	
-	    	PasswordDao passwordDao = new PasswordDao();
-	    	
+	    		    	
 	    	List<Password> passwords = passwordDao.getAllPassword();
 	        
 	    	Gson gson = new Gson();
