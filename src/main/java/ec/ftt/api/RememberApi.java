@@ -111,7 +111,7 @@ public class RememberApi extends HttpServlet {
 		if (request.getParameter("remember-id") == null)
 			 response.sendError(407, "Informe o ID do remember a ser retornado!!!" );
 		else {
-		Long rememberId = Long.valueOf(request.getParameter("password-id"));
+		Long rememberId = Long.valueOf(request.getParameter("Remember-id"));
 		
 		
 		

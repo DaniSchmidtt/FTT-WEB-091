@@ -122,7 +122,7 @@ public class PasswordApi extends HttpServlet {
 		
 		pd.deletePassord(passwordId);
 		
-		response.getWriter().append(request.getParameter("password-id") + " Remember removido");
+		response.getWriter().append(request.getParameter("password-id") + " Password removido");
 		}
 	}
 }
