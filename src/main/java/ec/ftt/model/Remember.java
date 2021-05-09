@@ -13,6 +13,15 @@ public class Remember {
 
 	    }
 	    
+	    
+	    public Remember(String id, String question, String answer, String site) {
+			super();
+			setId(id);
+			setQuestion(question);
+			setAnswer(answer);
+			setSite(site);
+		}
+	    
 	    public Remember(long id, String question, String answer, String site) {
 			super();
 			setId(id);

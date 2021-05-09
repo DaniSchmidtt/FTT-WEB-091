@@ -67,7 +67,7 @@ public class PasswordDao {
         }
     } //deleteUser
 
-    public void updateUser(Password password) {
+    public void updatePassword(Password password) {
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("UPDATE ftt.PASSWORD SET NAME=?, " 

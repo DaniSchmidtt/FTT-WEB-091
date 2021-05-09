@@ -99,7 +99,7 @@ public class PasswordApi extends HttpServlet {
 				);
 		PasswordDao passwordDao = new PasswordDao();
 		
-		passwordDao.updateUser(p);
+		passwordDao.updatePassword(p);
 		
 		System.out.println(p);
 		
@@ -114,7 +114,7 @@ public class PasswordApi extends HttpServlet {
 		response.setStatus(418); //200 - OK - Padrão (Default)
 
 		if (request.getParameter("password-id") == null)
-			 response.sendError(407, "Informe o ID do usuário a ser retornado!!!" );
+			 response.sendError(407, "Informe o ID do password a ser retornado!!!" );
 		else {
 		Long passwordId = Long.valueOf(request.getParameter("password-id"));
 		
@@ -124,7 +124,7 @@ public class PasswordApi extends HttpServlet {
 		
 		pd.deletePassord(passwordId);
 		
-		response.getWriter().append(request.getParameter("password-id") + " User removido");
+		response.getWriter().append(request.getParameter("password-id") + " Remember removido");
 		}
 	}
 }
