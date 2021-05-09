@@ -35,12 +35,12 @@
  
  	<div id="top" class="row">
 		<div class="col-sm-3">
-			<h2>Senhas</h2>
+			<h2>Remembers</h2>
 		</div>
 		<div class="col-sm-6">
 			
 			<div class="input-group h2">
-				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Senhas">
+				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Remembers">
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="submit">
 						<span class="glyphicon glyphicon-search"></span>
@@ -50,7 +50,7 @@
 			
 		</div>
 		<div class="col-sm-3">
-			<a href="add.html" class="btn btn-primary pull-right h2">Adicionar senha</a>
+			<a href="add_remember.html" class="btn btn-primary pull-right h2">Adicionar Remember</a>
 		</div>
 	</div> <!-- /#top -->
  
@@ -63,30 +63,28 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>E-mail</th>
+					<th>Question</th>
+					<th>Answer</th>
 					<th>Site</th>
-					<th>User Name</th>
-					<th>Password</th>
 					<th class="actions">Ações</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td>1001</td>
-					<td></td>
 					<td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
 					<td>Jes</td>
 					<td>01/01/2015</td>
 					<td class="actions">
-						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-warning btn-xs" href="edit_remember.html">Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>
-				</tr>
+				</tr>				
 			</tbody>
 		</table>
 	</div>
 	
-	</div> <!-- /#list -->
+	</div> <!-- /#list -->	
  </div> <!-- /#main -->
 
 <!-- Modal -->
@@ -95,10 +93,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Excluir Senha</h4>
+        <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
       </div>
       <div class="modal-body">
-        Deseja realmente excluir esta senha?
+        Deseja realmente excluir este item?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Sim</button>
