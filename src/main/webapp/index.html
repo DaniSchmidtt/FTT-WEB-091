@@ -8,7 +8,9 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+	rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 
@@ -76,9 +78,9 @@
 						</tr>
 					</thead>
 					<tbody id="table_passwords">
-						
 
-					</tbody> 
+
+					</tbody>
 				</table>
 			</div>
 
@@ -136,16 +138,20 @@
         })
     }
 				getPasswords();
-				
-				function deletePassword(idd) {
+				</script>
+
+	<script>
+				function deletePassword(id) {
 					$.ajax({
 			            method: "delete",
-			            url: "http://localhost:8080/FTT-WEB-091/PasswordApi?password-id=${idd}"
+			            url: `/FTT-WEB-091/PasswordApi?password-id=${id}`
 			        }).then(resp => {
 			            location.reload()
 			        })
 				}
-				</script>
 				
+				</script>
+
+
 </body>
 </html>

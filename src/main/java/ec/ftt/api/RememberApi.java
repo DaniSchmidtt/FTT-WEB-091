@@ -28,6 +28,20 @@ public class RememberApi extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp)
+	          throws ServletException, IOException {
+	      setAccessControlHeaders(resp);
+	      resp.setStatus(HttpServletResponse.SC_OK);
+	  }
+	
+	 private void setAccessControlHeaders(HttpServletResponse resp) {
+	      resp.setHeader("Access-Control-Allow-Origin", "*");
+	      resp.setHeader("Access-Control-Allow-Methods", "GET");
+	      resp.setHeader("Access-Control-Allow-Methods", "POST");
+	      resp.setHeader("Access-Control-Allow-Methods", "PUT");
+	      resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
+	  }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,6 +50,8 @@ public class RememberApi extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.setStatus(418); //200 - OK - Padrão (Default)
 
+		setAccessControlHeaders(response);
+		
 		String rememberId = request.getParameter("remember-id");
 		
 		RememberDao rememberDao = new RememberDao();
@@ -63,6 +79,9 @@ public class RememberApi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		setAccessControlHeaders(response);
+		
 		Remember r = new Remember(
 				request.getParameter("remember-id"),
 				request.getParameter("remember-question"),
@@ -85,6 +104,9 @@ public class RememberApi extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		setAccessControlHeaders(response);
+		
 		response.setContentType("application/json"); //mimeType - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 		Remember r = new Remember(
 				request.getParameter("remember-id"),
@@ -106,13 +128,14 @@ public class RememberApi extends HttpServlet {
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setStatus(418); //200 - OK - Padrão (Default)
+		
+		
+		//response.setStatus(418); //200 - OK - Padrão (Default)
 
 		if (request.getParameter("remember-id") == null)
 			 response.sendError(407, "Informe o ID do remember a ser retornado!!!" );
 		else {
 		Long rememberId = Long.valueOf(request.getParameter("Remember-id"));
-		
 		
 		
 		RememberDao rd = new RememberDao();

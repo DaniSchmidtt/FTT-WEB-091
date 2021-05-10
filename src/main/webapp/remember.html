@@ -126,5 +126,17 @@
 				getRemember();
  </script>
  
+ <script>
+				function deleteRemember(id) {
+					$.ajax({
+			            method: "delete",
+			            url: `/FTT-WEB-091/RememberApi?remember-id=${id}`
+			        }).then(resp => {
+			            location.reload()
+			        })
+				}
+				
+				</script>
+ 
 </body>
 </html>
