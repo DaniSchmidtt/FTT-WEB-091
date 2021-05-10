@@ -34,7 +34,7 @@ public class RememberApi extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setStatus(418); //200 - OK - Padrão (Default)
+		//response.setStatus(418); //200 - OK - Padrão (Default)
 
 		String rememberId = request.getParameter("remember-id");
 		

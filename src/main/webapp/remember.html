@@ -69,17 +69,8 @@
 					<th class="actions">Ações</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>1001</td>
-					<td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-					<td>Jes</td>
-					<td>01/01/2015</td>
-					<td class="actions">
-						<a class="btn btn-warning btn-xs" href="edit_remember.html">Editar</a>
-						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-					</td>
-				</tr>				
+			<tbody id="table_remembers">
+					
 			</tbody>
 		</table>
 	</div>
@@ -87,7 +78,7 @@
 	</div> <!-- /#list -->	
  </div> <!-- /#main -->
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -104,9 +95,36 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
  <script src="js/jquery.min.js"></script>
  <script src="js/bootstrap.min.js"></script>
+ <script>
+ function getRemember() {
+     $.ajax({
+         method: "get",
+         url: "http://localhost:8080/FTT-WEB-091/RememberApi"
+     }).then(resp => {
+         let remembers = JSON.parse(resp)
+         let tableHtml = ""
+
+         	remembers.forEach(remember => {
+             tableHtml += `
+                 <tr>
+                     <th scope="row">${remember.id}</th>
+                     <td>${remember.question}</td>
+                     <td>${remember.answer}</td>
+                     <td>${remember.site}</td>
+                     <td><a class="btn btn-danger btn-xs" href="#" onclick="deleteRemember(${remember.id})">Excluir</a></td>
+                 </tr>
+             `
+         });
+
+         $('#table_remembers').html(tableHtml)
+     })
+ }
+				getRemember();
+ </script>
+ 
 </body>
 </html>
