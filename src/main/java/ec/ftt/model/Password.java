@@ -23,6 +23,13 @@ public class Password {
 		setSite(site);
 	}
     
+    public Password( String name, String email, String password, String site) {
+		super();
+		setName(name);
+		setEmail(email);
+		setPassword(password);
+		setSite(site);
+	}
 	
 	public Password(long id, String name, String email, String password, String site) {
 		super();

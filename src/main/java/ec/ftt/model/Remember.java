@@ -22,6 +22,13 @@ public class Remember {
 			setSite(site);
 		}
 	    
+	    public Remember( String question, String answer, String site) {
+			super();
+			setQuestion(question);
+			setAnswer(answer);
+			setSite(site);
+		}
+	    
 	    public Remember(long id, String question, String answer, String site) {
 			super();
 			setId(id);

@@ -67,7 +67,7 @@ public class PasswordApi extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Password p = new Password(
-				request.getParameter("password-id"),
+				//request.getParameter("password-id"),
 				request.getParameter("password-name"),
 				request.getParameter("password-email"),
 				request.getParameter("password-password"),

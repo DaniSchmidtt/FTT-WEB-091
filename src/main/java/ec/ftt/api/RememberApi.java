@@ -66,7 +66,7 @@ public class RememberApi extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Remember r = new Remember(
-				request.getParameter("remember-id"),
+				//request.getParameter("remember-id"),
 				request.getParameter("remember-question"),
 				request.getParameter("remember-answer"),
 				request.getParameter("remember-site")

@@ -35,34 +35,34 @@
   
   <h3 class="page-header">Adicionar Password</h3>
   
-  <form action="index.html">
+  <form action="/FTT-WEB-091/PasswordApi" method = 'post'>
   	<div class="row">
   	  <div class="form-group col-md-4">
   	  	<label for="email">E-mail</label>
-  	  	<input type="email" class="form-control" id="email" placeholder="Digite o valor">
+  	  	<input type="email" class="form-control" id="password-email" name="password-email" placeholder="Digite o valor">
   	  </div>
 	</div>
 	<div class="row">
   	  <div class="form-group col-md-4">
   	  	<label for="name">User Name</label>
-  	  	<input type="text" class="form-control" id="name" placeholder="Digite o valor">
+  	  	<input type="text" class="form-control" id="password-name" name="password-name" placeholder="Digite o valor">
   	  </div>
 	</div>
 	<div class="row">
   	  <div class="form-group col-md-4">
   	  	<label for="password">Password</label>
-  	  	<input type="text" class="form-control" id="password" placeholder="Digite o valor">
+  	  	<input type="text" class="form-control" id="password-password" name="password-password" placeholder="Digite o valor">
   	  </div>
 	</div>
 	<div class="row">
   	  <div class="form-group col-md-4">
   	  	<label for="site">Site</label>
-  	  	<input type="url" class="form-control" id="site" placeholder="Digite o valor">
+  	  	<input type="url" class="form-control" id="password-site" name="password-site" placeholder="Digite o valor">
   	  </div>	
-	
+	</div>
 	<div class="row">
 	  <div class="col-md-12">
-	  	<button type="submit" class="btn btn-primary">Salvar</button>
+	  	<button type="submit" id="submit" class="btn btn-primary">Salvar</button>
 		<a href="index.html" class="btn btn-default">Cancelar</a>
 	  </div>
 	</div>
