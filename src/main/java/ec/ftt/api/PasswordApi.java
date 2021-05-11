@@ -38,8 +38,6 @@ public class PasswordApi extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.setStatus(418); //200 - OK - Padrão (Default)
 
-		
-		
 		String passwordId = request.getParameter("password-id");
 		
 		PasswordDao passwordDao = new PasswordDao();
@@ -68,8 +66,6 @@ public class PasswordApi extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
-		
 		Password p = new Password(
 				request.getParameter("password-id"),
 				request.getParameter("password-name"),
@@ -95,9 +91,6 @@ public class PasswordApi extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
-		
-		
 		response.setContentType("application/json"); //mimeType - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 		Password p = new Password(
 				request.getParameter("password-id"),
@@ -122,9 +115,6 @@ public class PasswordApi extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.setStatus(418); //200 - OK - Padrão (Default)
 		
-		
-		
-
 		if (request.getParameter("password-id") == null)
 			 response.sendError(407, "Informe o ID do password a ser retornado!!!" );
 		else {

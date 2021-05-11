@@ -38,8 +38,6 @@ public class RememberApi extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.setStatus(418); //200 - OK - Padrão (Default)
 
-		
-		
 		String rememberId = request.getParameter("remember-id");
 		
 		RememberDao rememberDao = new RememberDao();
@@ -58,7 +56,6 @@ public class RememberApi extends HttpServlet {
 	    	Gson gson = new Gson();
 
 	    	response.getWriter().append(gson.toJson(remembers));
-
 	    } 
 	}
 
@@ -67,8 +64,6 @@ public class RememberApi extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
 		
 		Remember r = new Remember(
 				request.getParameter("remember-id"),
@@ -92,8 +87,6 @@ public class RememberApi extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
 		
 		response.setContentType("application/json"); //mimeType - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 		Remember r = new Remember(
