@@ -72,7 +72,7 @@ public class PasswordDao {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("UPDATE ftt.PASSWORD SET NAME=?, " 
                     		                          + "EMAIL=?, " 
-                    		                          + "PASSWORD=? " 
+                    		                          + "PASSWORD=?, " 
                     		                          + "SITE=? " 
                     		                          + "WHERE ID=?");
             

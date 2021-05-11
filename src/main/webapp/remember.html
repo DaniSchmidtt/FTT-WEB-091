@@ -37,18 +37,7 @@
 		<div class="col-sm-3">
 			<h2>Remembers</h2>
 		</div>
-		<div class="col-sm-6">
-			
-			<div class="input-group h2">
-				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Remembers">
-				<span class="input-group-btn">
-					<button class="btn btn-primary" type="submit">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-			</div>
-			
-		</div>
+		
 		<div class="col-sm-3">
 			<a href="add_remember.html" class="btn btn-primary pull-right h2">Adicionar Remember</a>
 		</div>
@@ -59,7 +48,7 @@
  	<div id="list" class="row">
 	
 	<div class="table-responsive col-md-12">
-		<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<table class="table table-striped" >
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -105,7 +94,7 @@
          method: "get",
          url: "http://localhost:8080/FTT-WEB-091/RememberApi"
      }).then(resp => {
-         let remembers = JSON.parse(resp)
+         let remembers = resp
          let tableHtml = ""
 
          	remembers.forEach(remember => {
@@ -115,7 +104,8 @@
                      <td>${remember.question}</td>
                      <td>${remember.answer}</td>
                      <td>${remember.site}</td>
-                     <td><a class="btn btn-danger btn-xs" href="#" onclick="deleteRemember(${remember.id})">Excluir</a></td>
+                     <td><a class="btn btn-danger btn-xs" href="#" onclick="deleteRemember(${remember.id})">Excluir</a>
+                     <a class="btn btn-warning btn-xs" href="${"/FTT-WEB-091/edit_remember.html?remember-id=" + remember.id}">Editar</a></td>
                  </tr>
              `
          });

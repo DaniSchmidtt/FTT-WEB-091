@@ -41,19 +41,7 @@
 			<div class="col-sm-3">
 				<h2>Senhas</h2>
 			</div>
-			<div class="col-sm-6">
 
-				<div class="input-group h2">
-					<input name="data[search]" class="form-control" id="search"
-						type="text" placeholder="Pesquisar Senhas"> <span
-						class="input-group-btn">
-						<button class="btn btn-primary" type="submit">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</span>
-				</div>
-
-			</div>
 			<div class="col-sm-3">
 				<a href="add.html" class="btn btn-primary pull-right h2">Adicionar
 					senha</a>
@@ -118,7 +106,7 @@
             method: "get",
             url: "http://localhost:8080/FTT-WEB-091/PasswordApi"
         }).then(resp => {
-            let passwords = JSON.parse(resp)
+            let passwords = resp
             let tableHtml = ""
 
             	passwords.forEach(password => {
@@ -129,7 +117,8 @@
                         <td>${password.site}</td>
                         <td>${password.name}</td>
                         <td>${password.password}</td>
-                        <td><a class="btn btn-danger btn-xs" href="#" onclick="deletePassword(${password.id})">Excluir</a></td>
+                        <td><a class="btn btn-danger btn-xs" href="#" onclick="deletePassword(${password.id})">Excluir</a> 
+                        <a class="btn btn-warning btn-xs" href="${"/FTT-WEB-091/edit.html?password-id=" + password.id}">Editar</a></td>
                     </tr>
                 `
             });
