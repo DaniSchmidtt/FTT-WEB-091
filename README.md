@@ -10,6 +10,23 @@ FRONT - BOOTSTRAP, JSP E JAVASCRIPT
 | Caio dos reis | 081180043 |
 | Danilo Schimidt  | 081180007 |
 
+## Script das tabelas:
+CREATE TABLE `password` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(200) DEFAULT NULL,
+  `EMAIL` varchar(200) DEFAULT NULL,
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `SITE` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `remember` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `QUESTION` varchar(200) DEFAULT NULL,
+  `ANSWER` varchar(200) DEFAULT NULL,
+  `SITE` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 ## Telas:
 Pagina inicial e Exluir senhas:
 ![image](https://user-images.githubusercontent.com/56918423/117881025-21a53d00-b27f-11eb-947c-360461e6b7e9.png)
