@@ -121,7 +121,6 @@ public class PasswordApi extends HttpServlet {
 		Long passwordId = Long.valueOf(request.getParameter("password-id"));
 		
 		
-		
 		PasswordDao pd = new PasswordDao();
 		
 		pd.deletePassord(passwordId);
